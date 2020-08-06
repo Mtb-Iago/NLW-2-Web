@@ -9,6 +9,7 @@ import './styles.css';
 //para atribuir propriedades para os components, com isso posso usar a mesma função em vários lugares mudando seus parametros
 interface PageHeaderProps {
     title: string;
+    description?: string;  //propriedade do component opcional
 }
 
 const PageHeader: React.FC<PageHeaderProps> = (props) => {
@@ -22,6 +23,8 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
                </div>
                <div className="header-content">
                     <strong>{props.title}</strong>
+
+                    { props.description && <p>{props.description}</p> }
 
                     {props.children}
                </div>               
